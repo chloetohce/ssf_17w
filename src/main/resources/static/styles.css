@@ -1,0 +1,19 @@
+form {
+    margin:10px;
+    display: table;
+}
+
+.option {
+    
+    display: table-row;
+}
+
+label {
+    display: table-cell;
+    padding: 5px;
+    
+}
+
+select {
+    display: table-cell;
+}

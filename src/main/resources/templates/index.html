@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Currency Exchange</h2>
+    <div class="container">
+        <form method="post" action="/convert">
+            <div class="option">
+                <label for="from">From: </label>
+                <select name="from" id="from" required>
+                    <option value="" disabled selected></option>
+                    <option th:each="currency : ${countries}" th:value="${currency.currencyId}"
+                        th:text="|${currency.name} &#40;${currency.symbol}&#41;|"></option>
+                </select>
+            </div>
+
+            <div class="option">
+                <label for="to">To: </label>
+                <select name="to" id="to" required>
+                    <option value="" disabled selected></option>
+                    <option th:each="currency : ${countries}" th:value="${currency.currencyId}"
+                        th:text="|${currency.name} &#40;${currency.symbol}&#41;|"></option>
+                </select>
+            </div>
+
+            <div class="option">
+                <label for="number">Amount: </label>
+                <input type="number" name="amount" id="amount">
+            </div>
+
+            <button type="submit">Convert</button>
+        </form>
+    </div>
+</body>
+
+</html>
